@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Understanding Data Structures and Algorithms</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="understanding-data-structures-and-algorithms">Understanding Data Structures and Algorithms</h1>
+<h2 id="what-is-a-data-structure">What is a Data Structure?</h2>
+<p>A data runtime structure is a specialized format for organizing, processing, storing, and retrieving data. Each data structure is designed to organize data to suit specific purposes so that various operations can be performed efficiently.</p>
+<h2 id="properties-of-python-lists">Properties of Python Lists</h2>
+<p>Python lists are versatile data structures that allow dynamic resizing and can hold mixed data types. Here are seven important properties characterized by specific questions:</p>
+<ol>
+<li>
+<p><strong>How is it stored in memory?</strong></p>
+<ul>
+<li>Python lists are stored as contiguous blocks of memory, although the elements themselves may be scattered across memory.</li>
+</ul>
+</li>
+<li>
+<p><strong>Is it mutable or immutable?</strong></p>
+<ul>
+<li>Lists are mutable, meaning that their elements can be changed after creation.</li>
+</ul>
+</li>
+<li>
+<p><strong>Is it homogeneous or heterogeneous?</strong></p>
+<ul>
+<li>Lists are heterogeneous; they can store elements of different data types.</li>
+</ul>
+</li>
+<li>
+<p><strong>Is it linear or non-linear?</strong></p>
+<ul>
+<li>Lists are linear as elements are arranged in a sequential order.</li>
+</ul>
+</li>
+<li>
+<p><strong>Is it static or dynamic?</strong></p>
+<ul>
+<li>Lists are dynamic; they can expand or contract as elements are added or removed.</li>
+</ul>
+</li>
+<li>
+<p><strong>What is the access type?</strong></p>
+<ul>
+<li>Lists support random access, meaning any element can be accessed directly using its index.</li>
+</ul>
+</li>
+<li>
+<p><strong>What operations are commonly performed, and what are their complexities?</strong></p>
+<ul>
+<li>Common operations include appending (<code>O(1)</code> average case), inserting (<code>O(n)</code>), removing elements (<code>O(n)</code>), and accessing an element (<code>O(1)</code>).</li>
+</ul>
+</li>
+</ol>
+<h2 id="the-need-for-different-data-structures">The Need for Different Data Structures</h2>
+<p>While lists offer flexibility and ease of use, they may not be the most efficient for all types of operations. For example:</p>
+<ul>
+<li><strong>Searching:</strong> Searching for an element in an unsorted list requires <code>O(n)</code> time.</li>
+<li><strong>Sorting:</strong> Operations that require frequent sorting can be costly with lists due to their <code>O(n log n)</code> complexity.</li>
+<li><strong>Space Efficiency:</strong> Other structures like arrays or linked lists might use memory more efficiently depending on the scenario.</li>
+</ul>
+<h2 id="what-is-an-algorithm">What is an Algorithm?</h2>
+<p>An algorithm is a step-by-step procedure or formula for solving a problem. It is a series of instructions that are executed to perform a specific task or to compute a result.</p>
+<h2 id="time-complexity-and-steps">Time Complexity and Steps</h2>
+<p>The time complexity of algorithms is measured in terms of steps because it provides a hardware-independent metric of performance. Measuring in time units (seconds) would vary with processor speed and other system-specific factors, making comparisons between algorithms less accurate.</p>
+<h2 id="comparing-search-algorithms-linear-vs-binary-search">Comparing Search Algorithms: Linear vs Binary Search</h2>
+<p>Binary search is typically more efficient than linear search because it reduces the search space by half with each step, assuming the data is sorted. Here's a detailed comparison:</p>
+<ul>
+<li><strong>Assumption:</strong> Binary search assumes that the list is sorted, which can require additional <code>O(n log n)</code> preprocessing time if the data is unsorted.</li>
+<li><strong>Cost Comparison:</strong>
+<ul>
+<li><strong>Linear Search:</strong> Requires <code>O(n)</code> steps in the worst case to find an element.</li>
+<li><strong>Binary Search:</strong> Requires <code>O(log n)</code> steps in the worst case, making it significantly faster on large, sorted datasets.</li>
+</ul>
+</li>
+</ul>
+<p>Binary search is preferable in scenarios where the overhead of sorting the data is justified by frequent searches, as each search is exponentially faster compared to linear search.</p>
+
+            
+            
+        </body>
+        </html>

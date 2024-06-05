@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Python Time Complexity Patterns</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+pre {
+    background-color: #f4f4f4; /* Light grey background */
+    border: 1px solid #ccc; /* Light grey border */
+    font-family: 'Courier New', Courier, monospace; /* Font style for code */
+    padding: 10px; /* Padding inside the code block */
+    font-size: 16px; /* Font size */
+}
+
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="python-time-complexity-patterns">Python Time Complexity Patterns</h1>
+<h1 id="question-1">Question 1</h1>
+<h2 id="time-complexity-o1">Time Complexity: <code>O(1)</code></h2>
+<ul>
+<li>Operations do not depend on the size of the input data.</li>
+</ul>
+<h2 id="space-complexity-o1">Space Complexity: <code>O(1)</code></h2>
+<ul>
+<li>No additional space is used that scales with input size.</li>
+</ul>
+<pre><code class="language-python"><span class="hljs-comment"># Constant Time Function</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">constant_time_func</span>(<span class="hljs-params">lst</span>):
+    <span class="hljs-keyword">return</span> lst[<span class="hljs-number">1</span>]
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">constant_time</span>():
+    x = <span class="hljs-number">1</span>
+    x += <span class="hljs-number">1</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Constant Time Output:&quot;</span>, x)
+</code></pre>
+<p>Explanation :The constant_time_func and constant_time perform operations that do not depend on input size.</p>
+<h1 id="question-2">Question 2</h1>
+<h2 id="time-complexity-on">Time Complexity: <code>O(N)</code></h2>
+<p>perations scale linearly with the input size.</p>
+<h2 id="space-complexity-o1-1">Space Complexity: <code>O(1)</code></h2>
+<p>Uses a constant amount of additional space regardless of input size.</p>
+<pre><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">loop</span>(<span class="hljs-params">N</span>):
+    count = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(N):
+        count += <span class="hljs-number">1</span>
+    <span class="hljs-keyword">return</span> count
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">func</span>(<span class="hljs-params">lst</span>):
+    lst.insert(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>)
+
+
+</code></pre>
+<p>Explanation : linear_time_loop counts up to N, performing N operations. linear_time_insert performs a single operation that takes linear time relative to the list size.</p>
+<h1 id="question-3">Question 3</h1>
+<h2 id="time-complexity-on2">Time Complexity: <code>O(N^2)</code></h2>
+<p>Nested loops each run up to N times.</p>
+<h2 id="space-complexity-o1-2">Space Complexity: <code>O(1)</code></h2>
+<p>No additional space that scales with the square of the input size is used.</p>
+<pre><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">nested_loop</span>(<span class="hljs-params">N</span>):
+    count = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(N):
+        <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(N):
+            count += <span class="hljs-number">1</span>
+    <span class="hljs-keyword">return</span> count
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">nested_loop</span>(<span class="hljs-params">lst</span>):
+    count = <span class="hljs-number">0</span>
+    N = <span class="hljs-built_in">len</span>(lst)
+    <span class="hljs-keyword">for</span> ele <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(N):
+        lst.insert(<span class="hljs-number">0</span>, ele)
+
+
+</code></pre>
+<p>Explanation: quadratic_time_nested_loop runs two nested loops each up to N, resulting in N^2 operations. quadratic_time_insert performs increasingly costly insert operations as the list grows.</p>
+<h1 id="question-4">Question 4</h1>
+<h2 id="time-complexity-onk">Time Complexity: <code>O(N/K)</code></h2>
+<p>Iterates over N elements with steps of size k.</p>
+<h2 id="space-complexity-o1-3">Space Complexity: <code>O(1)</code></h2>
+<p>Uses a constant amount of space.</p>
+<pre><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">loop</span>(<span class="hljs-params">N, k</span>):
+    <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(N, <span class="hljs-number">1</span>, -k):
+        <span class="hljs-keyword">pass</span>
+
+</code></pre>
+<p>Explanation: loop_with_step iterates with steps decrementing by k, affecting loop count.</p>
+<h1 id="question-5">Question 5</h1>
+<h2 id="time-complexity-on2k">Time Complexity: <code>O(N^2/K)</code></h2>
+<p>Scaled quadratic time complexity due to varying loop steps.</p>
+<h2 id="space-complexity-o1-4">Space Complexity: <code>O(1)</code></h2>
+<p>Constant space usage, regardless of the nested iteration structure.</p>
+<pre><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">func</span>(<span class="hljs-params">N</span>):
+    <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(N, <span class="hljs-number">1</span>, -<span class="hljs-number">3</span>):
+        <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(N, <span class="hljs-number">1</span>, -<span class="hljs-number">2</span>):
+            <span class="hljs-keyword">pass</span>
+
+
+</code></pre>
+<p>Explanation : nested_loops_diff_steps shows nested loops with different decrement rates.</p>
+<h1 id="question-6">Question 6</h1>
+<h2 id="time-complexity-ologn">Time Complexity: <code>O(logN)</code></h2>
+<p>Number of operations decreases logarithmically with each iteration.</p>
+<h2 id="space-complexity-o1-5">Space Complexity: O(1)</h2>
+<p>Uses a fixed amount of space regardless of the size of N.</p>
+<pre><code class="language-python">
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">func</span>(<span class="hljs-params">N</span>):
+    i = <span class="hljs-number">1</span>
+    count = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">while</span> (i &lt; N):
+        i *= <span class="hljs-number">2</span>
+        count += <span class="hljs-number">1</span>
+    <span class="hljs-keyword">return</span> count
+
+</code></pre>
+<p>Explanation : doubles a counter, reducing the needed steps logarithmically with respect to N.</p>
+
+            
+            
+        </body>
+        </html>
