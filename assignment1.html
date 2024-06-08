@@ -2,7 +2,7 @@
         <html>
         <head>
             <meta charset="UTF-8">
-            <title>Understanding Data Structures and Algorithms</title>
+            <title>Data Structures and Algorithms with Python - Assignment - 1</title>
             <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
@@ -138,78 +138,126 @@
         
         </head>
         <body class="vscode-body vscode-light">
-            <h1 id="understanding-data-structures-and-algorithms">Understanding Data Structures and Algorithms</h1>
-<h2 id="what-is-a-data-structure">What is a Data Structure?</h2>
-<p>A data runtime structure is a specialized format for organizing, processing, storing, and retrieving data. Each data structure is designed to organize data to suit specific purposes so that various operations can be performed efficiently.</p>
-<h2 id="properties-of-python-lists">Properties of Python Lists</h2>
+            <h1 id="data-structures-and-algorithms-with-python---assignment---1">Data Structures and Algorithms with Python - Assignment - 1</h1>
+<p><strong>CDA 500</strong>
+<strong>Vaibhav Bansal - 50560484</strong></p>
+<h2 id="q1-what-is-a-data-structure">Q1. What is a Data Structure?</h2>
+<p><strong>Answer 1:</strong></p>
+<p>Data structures refer to how data is organized. It not only organize our data but also influence the efficiency of our code. Each data structure is designed to organize data to suit specific purposes so that various operations can be performed efficiently.</p>
+<h2 id="q2-the-first-data-structure-we-studied-is-a-list-and-we-summarized-seven-properties-of-a-list-by-asking-seven-questions-answer-these-seven-questions-for-a-list-and-what-the-answer-means-these-answers-should-be-about-python-lists-not-any-other-language-use-average-case">Q2. The first data structure we studied is a list, and we summarized seven properties of a list by asking seven questions. Answer these seven questions for a list and what the answer means. These answers should be about Python lists, not any other language. Use average case</h2>
+<p><strong>Answer 2:</strong></p>
 <p>Python lists are versatile data structures that allow dynamic resizing and can hold mixed data types. Here are seven important properties characterized by specific questions:</p>
-<ol>
+<h4 id="1-readingindexing-1-step">1. Reading/Indexing (1 step)</h4>
+<ul>
+<li><strong>Answer</strong>: It takes 1 step.Retrieving an element from a Python list using its index is a constant time operation, represented as (O(1)). Python lists are implemented as dynamic arrays, allowing for direct access to any element using its index.</li>
+</ul>
+<h4 id="2-searching-for-a-value-not-contained-within-the-list-100-steps">2. Searching for a Value Not Contained Within the List (100 steps)</h4>
+<ul>
+<li><strong>Answer</strong>: 100 steps on average.If the value is not in the list, Python must examine each item until the end is reached. This results in a linear search time complexity of (O(n)), where (n) is the number of items in the list.</li>
+</ul>
+<h4 id="3-insertion-at-the-beginning-of-the-list-101-steps">3. Insertion at the Beginning of the List (101 steps)</h4>
+<ul>
+<li><strong>Answer</strong>: It costs 101 steps on average.Inserting an element at the beginning of a Python list involves shifting all existing elements to the right to make room. This operation is (O(n)) as it requires moving all elements in the list.</li>
+</ul>
+<h4 id="4-insertion-at-the-end-of-the-list-1-step-amortized">4. Insertion at the End of the List (1 step Amortized)</h4>
+<ul>
+<li><strong>Answer</strong>: It takes 1 step, on average, in an amortized way.Appending an item at the end of the list typically has a time complexity of (O(1)). Occasionally, if the underlying array is full, Python must allocate a larger array and copy all elements, but this cost is amortized over many append operations.</li>
+</ul>
+<h4 id="5-deletion-at-the-beginning-of-the-list-100-steps">5. Deletion at the Beginning of the List (100 steps)</h4>
+<ul>
+<li><strong>Answer</strong>: In amortized terms, costs 100 steps.Deleting the first element requires shifting all other elements one position to the left. This is also an (O(n)) operation.</li>
+</ul>
+<h4 id="6-deletion-at-the-end-of-the-list-1-step">6. Deletion at the End of the List (1 step)</h4>
+<ul>
+<li><strong>Answer</strong>: It costs 1 step.Deleting the last element is an (O(1)) operation, as no shifting of elements is required, making it efficient in terms of time complexity.</li>
+</ul>
+<h4 id="7-sorting-the-list-on-log-n">7. Sorting the List (O(n log n))</h4>
+<ul>
+<li><strong>Answer</strong>: Sorting a list has a time complexity of (O(n log n)).Sorting typically uses algorithms like Timsort, a hybrid based on merge sort and insertion sort, which achieves (O(n log n)) complexity. This efficiency makes it suitable for sorting large datasets as the complexity increases logarithmically with list size.</li>
+</ul>
+<h2 id="q3-why-do-you-need-to-study-different-data-structures-why-is-a-list-not-sufficient-hint-answer-these-questions-by-discussing-operations-you-can-perform-on-data-structures">Q3. Why do you need to study different data structures? Why is a list not sufficient? Hint: Answer these questions by discussing operations you can perform on data structures.</h2>
+<p><strong>Answer 3:</strong></p>
+<p>It is essential to study different data structures because each data structure has specific benefits and efficiencies in the operations of searching, inserting, deleting, sorting, and appending. The selection of a data structure significantly influences the time efficiency of an algorithm. Even though a list (or array) is a primary data structure, sometimes it cannot perform operations in the most effective way within the context.</p>
+<p>Other data structures that can be considered:</p>
+<h4 id="1-searching">1. Searching</h4>
+<ul>
+<li><strong>List</strong>: An unsorted list will take (O(n)) time because each element must be inspected. For a sorted list, the best time for searching is (O(log n)), achievable through binary search.</li>
+<li><strong>Hash Table (unsorted)</strong>: Provides an average search time of (O(1)), which is significantly better than a list.</li>
+<li><strong>Binary Search Tree (BST)</strong>: Allows an (O(log n)) search time if the tree is balanced.</li>
+</ul>
+<h4 id="2-insertion-at-the-beginning">2. Insertion at the Beginning</h4>
+<ul>
+<li><strong>List</strong>: In the case of a dynamic array, this operation takes (O(n)) because all elements need to be shifted.</li>
+<li><strong>Linked List</strong>: This operation can be performed in (O(1)).</li>
+</ul>
+<h4 id="3-insertion-at-the-end">3. Insertion at the End</h4>
+<ul>
+<li><strong>List</strong>: If within its capacity, it is done in (O(1)). If resizing is needed, then it is (O(n)).</li>
+<li><strong>Linked List</strong>: Also (O(1)) if we maintain a tail pointer; otherwise, it's (O(n)).</li>
+</ul>
+<h4 id="4-deletion-from-the-beginning">4. Deletion from the Beginning</h4>
+<ul>
+<li><strong>List</strong>: Requires (O(n)) time because it involves shifting all elements.</li>
+<li><strong>Linked List</strong>: Can be done in (O(1)) by adjusting the head pointer.</li>
+</ul>
+<h4 id="5-deletion-from-the-end">5. Deletion from the End</h4>
+<ul>
+<li><strong>List</strong>: Typically (O(1)) unless it triggers a resize of the underlying array.</li>
+<li><strong>Linked List</strong>: Requires (O(n)) to find the last but one element unless a tail pointer and a reference to the penultimate node are maintained.</li>
+</ul>
+<h4 id="6-sorting">6. Sorting</h4>
+<ul>
+<li><strong>List</strong>: Sorting an array can be efficient, with algorithms like QuickSort and MergeSort offering an average complexity of (O(n log n)). However, these operations are complex to implement correctly.</li>
+<li><strong>Linked List</strong>: Sorting is generally slower and more complex due to pointer handling overhead, though merge sort can be adapted to run in (O(n log n)).</li>
+</ul>
+<h4 id="7-appending">7. Appending</h4>
+<ul>
+<li><strong>List</strong>: Appending is (O(1)) when space is available; resizing incurs an average time complexity of (O(1)) due to the amortized cost of copying.</li>
+<li><strong>Linked List</strong>: Generally (O(1)) with a tail pointer; resizing is not needed.</li>
+</ul>
+<p>Although lists are simple and useful for many applications, their limitations in specific operations can lead to inefficient programs, particularly with large data sets or frequently performed operations. By understanding and utilizing different data structures, such as linked lists, hash tables, trees, and graphs, we can optimize our algorithms to be more efficient and system-friendly based on the specific needs of the operation.</p>
+<h2 id="q4-what-is-an-algorithm">Q4. What is an Algorithm?</h2>
+<p><strong>Answer 4:</strong></p>
+<p>An algorithm is simply a set of instructions for completing a specific task. It is a series of instructions that are executed to perform a specific task or to compute a result.</p>
+<h2 id="q5-time-complexity-of-algorithms-is-measured-in-terms-of-steps-instead-of-pure-time-why-is-that">Q5. Time complexity of algorithms is measured in terms of steps instead of pure time. Why is that?</h2>
+<p><strong>Answer 5:</strong></p>
+<p>Hardware-independent performance measurement is why steps are used to measure time complexity. It quantifies the algorithm based on N, where N is the number of elements in a list. Measuring in time units, such as seconds, would vary with processor speed and other system-specific factors, so making comparisons between algorithms becomes a bit difficult.</p>
+<h2 id="q6-we-compared-linear-search-to-binary-search-which-searching-algorithm-is-better-and-why-answer-this-answer-by-first-talking-about-what-binary-search-assumes-and-the-cost-of-ensuring-that-assumption-then-compare-how-many-steps-it-would-take-linear-search-to-find-an-element-vs-binary-search">Q6. We compared linear search to binary search. Which searching algorithm is better and why? Answer this answer by first talking about what binary search assumes and the cost of ensuring that assumption. Then compare how many steps it would take linear search to find an element vs binary search.</h2>
+<p><strong>Answer 6:</strong></p>
+<p>The costs of a binary search depend heavily on a key precondition: the array must be sorted. This is crucial because binary search operates by continually halving the search interval. If the array is unsorted, binary search could overlook the target value, leading to incorrect results. The primary cost involved in maintaining this precondition is the effort required to sort the array, which typically incurs a time complexity of (O(n log n)) using standard sorting algorithms like mergesort or quicksort.</p>
+<p><strong>Comparing how many steps it would take linear search to find an element vs binary search</strong></p>
+<ul>
 <li>
-<p><strong>How is it stored in memory?</strong></p>
+<p><strong>100-element array:</strong></p>
 <ul>
-<li>Python lists are stored as contiguous blocks of memory, although the elements themselves may be scattered across memory.</li>
+<li>Linear Search: 100 steps</li>
+<li>Binary Search: 7 steps</li>
 </ul>
 </li>
 <li>
-<p><strong>Is it mutable or immutable?</strong></p>
+<p><strong>10,000-element array:</strong></p>
 <ul>
-<li>Lists are mutable, meaning that their elements can be changed after creation.</li>
+<li>Linear Search: 10,000 steps</li>
+<li>Binary Search: 13 steps</li>
 </ul>
 </li>
 <li>
-<p><strong>Is it homogeneous or heterogeneous?</strong></p>
+<p><strong>1,000,000-element array:</strong></p>
 <ul>
-<li>Lists are heterogeneous; they can store elements of different data types.</li>
+<li>Linear Search: 1,000,000 steps</li>
+<li>Binary Search: 20 steps</li>
 </ul>
 </li>
 <li>
-<p><strong>Is it linear or non-linear?</strong></p>
+<p><strong>200-element array:</strong></p>
 <ul>
-<li>Lists are linear as elements are arranged in a sequential order.</li>
-</ul>
-</li>
-<li>
-<p><strong>Is it static or dynamic?</strong></p>
-<ul>
-<li>Lists are dynamic; they can expand or contract as elements are added or removed.</li>
-</ul>
-</li>
-<li>
-<p><strong>What is the access type?</strong></p>
-<ul>
-<li>Lists support random access, meaning any element can be accessed directly using its index.</li>
-</ul>
-</li>
-<li>
-<p><strong>What operations are commonly performed, and what are their complexities?</strong></p>
-<ul>
-<li>Common operations include appending (<code>O(1)</code> average case), inserting (<code>O(n)</code>), removing elements (<code>O(n)</code>), and accessing an element (<code>O(1)</code>).</li>
-</ul>
-</li>
-</ol>
-<h2 id="the-need-for-different-data-structures">The Need for Different Data Structures</h2>
-<p>While lists offer flexibility and ease of use, they may not be the most efficient for all types of operations. For example:</p>
-<ul>
-<li><strong>Searching:</strong> Searching for an element in an unsorted list requires <code>O(n)</code> time.</li>
-<li><strong>Sorting:</strong> Operations that require frequent sorting can be costly with lists due to their <code>O(n log n)</code> complexity.</li>
-<li><strong>Space Efficiency:</strong> Other structures like arrays or linked lists might use memory more efficiently depending on the scenario.</li>
-</ul>
-<h2 id="what-is-an-algorithm">What is an Algorithm?</h2>
-<p>An algorithm is a step-by-step procedure or formula for solving a problem. It is a series of instructions that are executed to perform a specific task or to compute a result.</p>
-<h2 id="time-complexity-and-steps">Time Complexity and Steps</h2>
-<p>The time complexity of algorithms is measured in terms of steps because it provides a hardware-independent metric of performance. Measuring in time units (seconds) would vary with processor speed and other system-specific factors, making comparisons between algorithms less accurate.</p>
-<h2 id="comparing-search-algorithms-linear-vs-binary-search">Comparing Search Algorithms: Linear vs Binary Search</h2>
-<p>Binary search is typically more efficient than linear search because it reduces the search space by half with each step, assuming the data is sorted. Here's a detailed comparison:</p>
-<ul>
-<li><strong>Assumption:</strong> Binary search assumes that the list is sorted, which can require additional <code>O(n log n)</code> preprocessing time if the data is unsorted.</li>
-<li><strong>Cost Comparison:</strong>
-<ul>
-<li><strong>Linear Search:</strong> Requires <code>O(n)</code> steps in the worst case to find an element.</li>
-<li><strong>Binary Search:</strong> Requires <code>O(log n)</code> steps in the worst case, making it significantly faster on large, sorted datasets.</li>
+<li>Linear Search: 200 steps</li>
+<li>Binary Search: Steps are not precisely defined as either 8 or 14 but should theoretically be closer to 8 (since (\log_2(200) \approx 7.64)).</li>
 </ul>
 </li>
 </ul>
-<p>Binary search is preferable in scenarios where the overhead of sorting the data is justified by frequent searches, as each search is exponentially faster compared to linear search.</p>
+<p><strong>Linear Search</strong> scans each element of the array sequentially, starting from the first element and continuing until the target element is found or the end of the array is reached. Its performance is (O(n)), where (n) is the number of elements in the array. Linear search does not require the array to be sorted and is straightforward to implement, but its time to complete increases significantly as the size of the array grows.</p>
+<p><strong>Binary Search</strong> exhibits a time complexity of (O(log n)), making it increasingly efficient for handling large datasets. The graph and data show that the number of steps required for binary search grows very slowly compared to linear search. This efficiency makes binary search particularly advantageous for large datasets, assuming the array is already sorted or can be sorted without incurring excessive costs.</p>
 
             
             

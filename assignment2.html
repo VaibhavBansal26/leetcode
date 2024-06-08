@@ -2,7 +2,7 @@
         <html>
         <head>
             <meta charset="UTF-8">
-            <title>Python Time Complexity Patterns</title>
+            <title>Data Structures and Algorithms with Python - Assignment - 2</title>
             <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
@@ -70,14 +70,6 @@
   color: inherit;
   border-left: .25em solid #888;
 }
-pre {
-    background-color: #f4f4f4; /* Light grey background */
-    border: 1px solid #ccc; /* Light grey border */
-    font-family: 'Courier New', Courier, monospace; /* Font style for code */
-    padding: 10px; /* Padding inside the code block */
-    font-size: 16px; /* Font size */
-}
-
 
 .markdown-alert>:first-child {
   margin-top: 0
@@ -146,13 +138,16 @@ pre {
         
         </head>
         <body class="vscode-body vscode-light">
-            <h1 id="python-time-complexity-patterns">Python Time Complexity Patterns</h1>
+            <h1 id="data-structures-and-algorithms-with-python---assignment---2">Data Structures and Algorithms with Python - Assignment - 2</h1>
+<p><strong>CDA 500</strong>
+<strong>Vaibhav Bansal - 50560484</strong></p>
 <h1 id="question-1">Question 1</h1>
-<h2 id="time-complexity-o1">Time Complexity: <code>O(1)</code></h2>
+<p><strong>Answer 1:</strong></p>
+<p><strong>Time Complexity: <code>O(1)</code></strong></p>
 <ul>
 <li>Operations do not depend on the size of the input data.</li>
 </ul>
-<h2 id="space-complexity-o1">Space Complexity: <code>O(1)</code></h2>
+<p><strong>Space Complexity: <code>O(1)</code></strong></p>
 <ul>
 <li>No additional space is used that scales with input size.</li>
 </ul>
@@ -165,12 +160,13 @@ pre {
     x += <span class="hljs-number">1</span>
     <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Constant Time Output:&quot;</span>, x)
 </code></pre>
-<p>Explanation :The constant_time_func and constant_time perform operations that do not depend on input size.</p>
+<p><strong>Explanation :The constant_time_func and constant_time perform operations that do not depend on input size.</strong></p>
 <h1 id="question-2">Question 2</h1>
-<h2 id="time-complexity-on">Time Complexity: <code>O(N)</code></h2>
-<p>perations scale linearly with the input size.</p>
-<h2 id="space-complexity-o1-1">Space Complexity: <code>O(1)</code></h2>
-<p>Uses a constant amount of additional space regardless of input size.</p>
+<p><strong>Answer 2:</strong></p>
+<p><strong>Time Complexity: <code>O(N)</code></strong>
+perations scale linearly with the input size.</p>
+<p><strong>Space Complexity: <code>O(1)</code></strong>
+Uses a constant amount of additional space regardless of input size.</p>
 <pre><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">loop</span>(<span class="hljs-params">N</span>):
     count = <span class="hljs-number">0</span>
     <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(N):
@@ -182,12 +178,13 @@ pre {
 
 
 </code></pre>
-<p>Explanation : linear_time_loop counts up to N, performing N operations. linear_time_insert performs a single operation that takes linear time relative to the list size.</p>
+<p><strong>Explanation : linear_time_loop counts up to N, performing N operations. linear_time_insert performs a single operation that takes linear time relative to the list size.</strong></p>
 <h1 id="question-3">Question 3</h1>
-<h2 id="time-complexity-on2">Time Complexity: <code>O(N^2)</code></h2>
-<p>Nested loops each run up to N times.</p>
-<h2 id="space-complexity-o1-2">Space Complexity: <code>O(1)</code></h2>
-<p>No additional space that scales with the square of the input size is used.</p>
+<p><strong>Answer 3:</strong></p>
+<p><strong>Time Complexity: <code>O(N^2)</code></strong>
+Nested loops each run up to N times.</p>
+<p><strong>Space Complexity: <code>O(1)</code></strong>
+No additional space that scales with the square of the input size is used.</p>
 <pre><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">nested_loop</span>(<span class="hljs-params">N</span>):
     count = <span class="hljs-number">0</span>
     <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(N):
@@ -203,23 +200,25 @@ pre {
 
 
 </code></pre>
-<p>Explanation: quadratic_time_nested_loop runs two nested loops each up to N, resulting in N^2 operations. quadratic_time_insert performs increasingly costly insert operations as the list grows.</p>
+<p><strong>Explanation: quadratic_time_nested_loop runs two nested loops each up to N, resulting in N^2 operations. quadratic_time_insert performs increasingly costly insert operations as the list grows.</strong></p>
 <h1 id="question-4">Question 4</h1>
-<h2 id="time-complexity-onk">Time Complexity: <code>O(N/K)</code></h2>
-<p>Iterates over N elements with steps of size k.</p>
-<h2 id="space-complexity-o1-3">Space Complexity: <code>O(1)</code></h2>
-<p>Uses a constant amount of space.</p>
+<p><strong>Answer 4:</strong></p>
+<p><strong>Time Complexity: <code>O(N/K)</code></strong>
+Iterates over N elements with steps of size k.</p>
+<p><strong>Space Complexity: <code>O(1)</code></strong>
+Uses a constant amount of space.</p>
 <pre><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">loop</span>(<span class="hljs-params">N, k</span>):
     <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(N, <span class="hljs-number">1</span>, -k):
         <span class="hljs-keyword">pass</span>
 
 </code></pre>
-<p>Explanation: loop_with_step iterates with steps decrementing by k, affecting loop count.</p>
+<p><strong>Explanation: loop_with_step iterates with steps decrementing by k, affecting loop count.</strong></p>
 <h1 id="question-5">Question 5</h1>
-<h2 id="time-complexity-on2k">Time Complexity: <code>O(N^2/K)</code></h2>
-<p>Scaled quadratic time complexity due to varying loop steps.</p>
-<h2 id="space-complexity-o1-4">Space Complexity: <code>O(1)</code></h2>
-<p>Constant space usage, regardless of the nested iteration structure.</p>
+<p><strong>Answer 5:</strong></p>
+<p><strong>Time Complexity: <code>O(N^2/K)</code></strong>
+Scaled quadratic time complexity due to varying loop steps.</p>
+<p><strong>Space Complexity: <code>O(1)</code></strong>
+Constant space usage, regardless of the nested iteration structure.</p>
 <pre><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">func</span>(<span class="hljs-params">N</span>):
     <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(N, <span class="hljs-number">1</span>, -<span class="hljs-number">3</span>):
         <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(N, <span class="hljs-number">1</span>, -<span class="hljs-number">2</span>):
@@ -227,12 +226,13 @@ pre {
 
 
 </code></pre>
-<p>Explanation : nested_loops_diff_steps shows nested loops with different decrement rates.</p>
+<p><strong>Explanation : nested_loops_diff_steps shows nested loops with different decrement rates.</strong></p>
 <h1 id="question-6">Question 6</h1>
-<h2 id="time-complexity-ologn">Time Complexity: <code>O(logN)</code></h2>
-<p>Number of operations decreases logarithmically with each iteration.</p>
-<h2 id="space-complexity-o1-5">Space Complexity: O(1)</h2>
-<p>Uses a fixed amount of space regardless of the size of N.</p>
+<p><strong>Answer 6:</strong></p>
+<p><strong>Time Complexity: <code>O(logN)</code></strong>
+Number of operations decreases logarithmically with each iteration.</p>
+<p><strong>Space Complexity: O(1)</strong>
+Uses a fixed amount of space regardless of the size of N.</p>
 <pre><code class="language-python">
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">func</span>(<span class="hljs-params">N</span>):
     i = <span class="hljs-number">1</span>
@@ -243,7 +243,7 @@ pre {
     <span class="hljs-keyword">return</span> count
 
 </code></pre>
-<p>Explanation : doubles a counter, reducing the needed steps logarithmically with respect to N.</p>
+<p><strong>Explanation : doubles a counter, reducing the needed steps logarithmically with respect to N.</strong></p>
 
             
             

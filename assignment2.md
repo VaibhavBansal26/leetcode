@@ -1,12 +1,16 @@
-# Python Time Complexity Patterns 
+# Data Structures and Algorithms with Python - Assignment - 2
 
+**CDA 500**
+**Vaibhav Bansal - 50560484**
 
 # Question 1
 
-## Time Complexity: `O(1)`
+**Answer 1:**
+
+**Time Complexity: `O(1)`**
 - Operations do not depend on the size of the input data.
 
-## Space Complexity: `O(1)`
+**Space Complexity: `O(1)`**
 - No additional space is used that scales with input size.
 
 ```python
@@ -19,14 +23,16 @@ def constant_time():
     x += 1
     print("Constant Time Output:", x)
 ```
-Explanation :The constant_time_func and constant_time perform operations that do not depend on input size.
+**Explanation :The constant_time_func and constant_time perform operations that do not depend on input size.**
 
 # Question 2 
 
-## Time Complexity: `O(N)`
+**Answer 2:**
+
+**Time Complexity: `O(N)`**
 perations scale linearly with the input size.
 
-## Space Complexity: `O(1)`
+**Space Complexity: `O(1)`**
 Uses a constant amount of additional space regardless of input size.
 
 ```python
@@ -41,14 +47,16 @@ def func(lst):
 
 
 ```
-Explanation : linear_time_loop counts up to N, performing N operations. linear_time_insert performs a single operation that takes linear time relative to the list size.
+**Explanation : linear_time_loop counts up to N, performing N operations. linear_time_insert performs a single operation that takes linear time relative to the list size.**
 
 # Question 3 
 
-## Time Complexity: `O(N^2)`
+**Answer 3:**
+
+**Time Complexity: `O(N^2)`**
 Nested loops each run up to N times.
 
-## Space Complexity: `O(1)`
+**Space Complexity: `O(1)`**
 No additional space that scales with the square of the input size is used.
 
 ```python
@@ -67,14 +75,16 @@ def nested_loop(lst):
 
 
 ```
-Explanation: quadratic_time_nested_loop runs two nested loops each up to N, resulting in N^2 operations. quadratic_time_insert performs increasingly costly insert operations as the list grows.
+**Explanation: quadratic_time_nested_loop runs two nested loops each up to N, resulting in N^2 operations. quadratic_time_insert performs increasingly costly insert operations as the list grows.**
 
 # Question 4 
 
-## Time Complexity: `O(N/K)`
+**Answer 4:**
+
+**Time Complexity: `O(N/K)`**
 Iterates over N elements with steps of size k.
 
-## Space Complexity: `O(1)`
+**Space Complexity: `O(1)`**
 Uses a constant amount of space.
 
 ```python
@@ -83,15 +93,17 @@ def loop(N, k):
         pass
 
 ```
-Explanation: loop_with_step iterates with steps decrementing by k, affecting loop count.
+**Explanation: loop_with_step iterates with steps decrementing by k, affecting loop count.**
 
 
 # Question 5
 
-## Time Complexity: `O(N^2/K)`
+**Answer 5:**
+
+**Time Complexity: `O(N^2/K)`**
 Scaled quadratic time complexity due to varying loop steps.
 
-## Space Complexity: `O(1)`
+**Space Complexity: `O(1)`**
 Constant space usage, regardless of the nested iteration structure.
 
 ```python
@@ -102,14 +114,16 @@ def func(N):
 
 
 ```
-Explanation : nested_loops_diff_steps shows nested loops with different decrement rates.
+**Explanation : nested_loops_diff_steps shows nested loops with different decrement rates.**
 
 # Question 6 
 
-## Time Complexity: `O(logN)`
+**Answer 6:**
+
+**Time Complexity: `O(logN)`**
 Number of operations decreases logarithmically with each iteration.
 
-## Space Complexity: O(1)
+**Space Complexity: O(1)**
 Uses a fixed amount of space regardless of the size of N.
 
 ```python
@@ -123,4 +137,4 @@ def func(N):
     return count
 
 ```
-Explanation : doubles a counter, reducing the needed steps logarithmically with respect to N.
+**Explanation : doubles a counter, reducing the needed steps logarithmically with respect to N.**
