@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Data Structures and Algorithms with Python - Video Assignment - 1</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="data-structures-and-algorithms-with-python---video-assignment---1">Data Structures and Algorithms with Python - Video Assignment - 1</h1>
+<p><strong>CDA 500</strong>
+<strong>Vaibhav Bansal - 50560484</strong></p>
+<h2 id="max-product-code-video-link">Max Product Code Video Link:</h2>
+<p><a href="https://buffalo.app.box.com/s/f5b6tuxc0wky95d94ca21n0nbbojjfop">https://buffalo.app.box.com/s/f5b6tuxc0wky95d94ca21n0nbbojjfop</a></p>
+<h2 id="find-duplicates-code-video-link">Find Duplicates Code Video Link:</h2>
+<p><a href="https://buffalo.app.box.com/s/ukvuaviclx33hk9jll82y9f1koe2g4gr">https://buffalo.app.box.com/s/ukvuaviclx33hk9jll82y9f1koe2g4gr</a></p>
+<h1 id="question-1-max-product">Question 1: Max Product</h1>
+<p><a href="https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array">https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array</a></p>
+<h2 id="solution-1">Solution 1</h2>
+<p><strong>Ques:How does the first solution with two loops tackle the problem? What is it is time and space complexity and how do you know this?</strong></p>
+<p><strong>Code :</strong></p>
+<pre><code class="language-python"><span class="hljs-keyword">from</span> typing <span class="hljs-keyword">import</span> <span class="hljs-type">List</span>
+nums = [-<span class="hljs-number">100</span>,-<span class="hljs-number">99</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">maxProduct</span>(<span class="hljs-params">nums: <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]</span>) -&gt; <span class="hljs-built_in">int</span>:
+    length = <span class="hljs-built_in">len</span>(nums)
+    max_prod = <span class="hljs-number">0</span>
+    max_indices = (<span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(length):
+        current_val = nums[i]
+        j = i + <span class="hljs-number">1</span>
+        <span class="hljs-keyword">while</span> j &lt; length:          
+            next_val = nums[j]
+            prod = current_val * next_val
+            <span class="hljs-keyword">if</span> prod &gt; max_prod:
+                max_vals = (nums[i], nums[j])
+                max_prod = prod
+            j += <span class="hljs-number">1</span>
+    i, j = max_vals      
+    max_prod = (i-<span class="hljs-number">1</span>) * (j-<span class="hljs-number">1</span>)    
+    <span class="hljs-keyword">return</span> max_prod
+            
+maxProduct(nums)   
+</code></pre>
+<p><strong>Time Complexity:</strong> <code>O(n^2)</code></p>
+<ul>
+<li>Nested loop is present in the code</li>
+</ul>
+<p><strong>Space Complexity:</strong> <code>O(1)</code></p>
+<ul>
+<li>The space complexity is 𝑂(1) because the additional space used does not grow with the size of the input list</li>
+</ul>
+<p><strong>Explanation:</strong> - The time complexity of this approach is O(n^2) because it involves nested loops to compare each element with every other element.The space complexity is 𝑂(1) because the additional space used does not grow with the size of the input list. It initializes the variables that will store the maximum product found (max_prod) and the indices that formed it (max_indices). The function then uses a nested loop to scan over all possible pairs of elements in the list: the outer loop scans over each component and the other scans over the successive elements to form pairs. It computes the product for each pair and updates max_prod and max_vals if the current product is higher than what it records. Then, having the best pair in the end, the values are updated through - 1 from each, and then the last product is re-computed.</p>
+<h1 id="solution-2">Solution 2</h1>
+<p><strong>Ques:How does the second solution using sorting work? What is the time and space complexity and how do you know this?</strong></p>
+<p><strong>Code :</strong></p>
+<pre><code class="language-python">nums = [<span class="hljs-number">1</span>,<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">maxProduct</span>(<span class="hljs-params">nums: <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]</span>) -&gt; <span class="hljs-built_in">int</span>:
+    nums.sort() <span class="hljs-comment"># n log n</span>
+    length = <span class="hljs-built_in">len</span>(nums)
+    <span class="hljs-keyword">return</span> (nums[length-<span class="hljs-number">1</span>]-<span class="hljs-number">1</span>) * (nums[length-<span class="hljs-number">2</span>]-<span class="hljs-number">1</span>)
+maxProduct(nums)  
+</code></pre>
+<p><strong>Time Complexity:</strong> <code>O(nlogn)</code></p>
+<ul>
+<li>O(nlogn) due to the sorting step</li>
+</ul>
+<p><strong>Space Complexity:</strong> <code>O(1)</code></p>
+<ul>
+<li>The space complexity is O(1) for the additional variables used (length and the return value), since the sorting is done in place and no extra data structures are used.</li>
+</ul>
+<p><strong>Explanation:</strong> O(nlogn) due to the sorting step.O(1) for the list itself, but up to O(n) due to auxiliary space used by the sorting algorithm.Once sorted, the two largest elements in the list will be the last two elements. The function then calculates the product of these two largest elements, each decremented by 1, by accessing them through their index and return their product.</p>
+<h1 id="solution-3">Solution 3</h1>
+<p><strong>Ques:How does the third solution work? How can you modify it to handle the case for two large negative numbers?  What is the time and space complexity and how do you know this? What is the main trick or insight that you learned from the final solution? HINT: How are you storing two max or two min values in just one loop.</strong></p>
+<p><strong>Code :</strong></p>
+<pre><code class="language-python">nums = [-<span class="hljs-number">100</span>,-<span class="hljs-number">99</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">maxProduct</span>(<span class="hljs-params">nums: <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]</span>) -&gt; <span class="hljs-built_in">int</span>:
+    max_val = <span class="hljs-built_in">float</span>(<span class="hljs-string">&#x27;-inf&#x27;</span>)
+    max_val_1 = <span class="hljs-built_in">float</span>(<span class="hljs-string">&#x27;-inf&#x27;</span>)
+    min_val = <span class="hljs-built_in">float</span>(<span class="hljs-string">&#x27;inf&#x27;</span>)
+    min_val_1 = <span class="hljs-built_in">float</span>(<span class="hljs-string">&#x27;inf&#x27;</span>)
+    <span class="hljs-keyword">for</span> val <span class="hljs-keyword">in</span> nums:
+        <span class="hljs-keyword">if</span> val &gt; max_val:
+            max_val_1 = max_val
+            max_val = val
+        <span class="hljs-keyword">elif</span> val &gt; max_val_1:
+            max_val_1 = val
+            
+        <span class="hljs-keyword">if</span> val &lt; min_val:
+            min_val_1 = min_val
+            min_val = val
+        <span class="hljs-keyword">elif</span> val &lt; min_val_1:
+            min_val_1 = val
+        
+    max_res = (max_val-<span class="hljs-number">1</span>) * (max_val_1-<span class="hljs-number">1</span>)
+    min_res = (min_val-<span class="hljs-number">1</span>) * (min_val_1-<span class="hljs-number">1</span>)
+
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">max</span>(max_res, min_res)
+    
+maxProduct(nums)  
+</code></pre>
+<p><strong>Time Complexity:</strong><code>O(n)</code></p>
+<ul>
+<li>The code iterates through the list exactly once, performing constant-time operations within the loop.</li>
+</ul>
+<p><strong>Space Complexity:</strong> <code>O(1)</code></p>
+<ul>
+<li>The space complexity of the given code is O(1), which means it uses a constant amount of extra space regardless of the input size.</li>
+</ul>
+<p><strong>Explanation:</strong>
+finding the maximum product of two distinct elements in a list nums, after decrementing each by 1. It initializes four variables to track the two largest (max_val, max_val_1) and two smallest (min_val, min_val_1) values. As it iterates through the list, it updates these variables accordingly. After the loop, it computes the products of the two largest and the two smallest values, each decremented by 1. Finally, it returns the larger of these two products. This approach ensures that the function accounts for both large positive values and large negative values that could result in a high positive product.</p>
+<h1 id="question-2-find-duplicates">Question 2: Find Duplicates</h1>
+<p><a href="https://leetcode.com/problems/find-all-duplicates-in-an-array/">https://leetcode.com/problems/find-all-duplicates-in-an-array/</a></p>
+<h2 id="solution-1-1">Solution 1</h2>
+<p><strong>Ques: How does the first solution using set and dictionary work? What is it is time and space complexity and how do you know this? Also, does it meet the criteria set by the problem?</strong></p>
+<p><strong>Code :</strong></p>
+<p><strong>Using Dictionary</strong></p>
+<pre><code class="language-python">lst = [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">7</span>, <span class="hljs-number">7</span>]
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">find_duplicates</span>(<span class="hljs-params">lst</span>):
+    result = []
+    seen = {}
+    
+    <span class="hljs-keyword">for</span> val <span class="hljs-keyword">in</span> lst:
+        <span class="hljs-keyword">if</span> val <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> seen:
+            seen[val] = <span class="hljs-number">1</span>
+        <span class="hljs-keyword">else</span>:
+            result.append(val)
+            
+    <span class="hljs-keyword">return</span> result
+find_duplicates(lst)
+</code></pre>
+<p><strong>Using Sets</strong></p>
+<pre><code class="language-python">lst = [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">7</span>, <span class="hljs-number">7</span>]
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">find_duplicates</span>(<span class="hljs-params">lst</span>):
+    result = []
+    seen = <span class="hljs-built_in">set</span>()
+    
+    <span class="hljs-keyword">for</span> val <span class="hljs-keyword">in</span> lst:
+        <span class="hljs-keyword">if</span> val <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> seen:
+            seen.add(val)
+        <span class="hljs-keyword">else</span>:
+            result.append(val)
+            
+    <span class="hljs-keyword">return</span> result
+find_duplicates(lst)
+</code></pre>
+<p><strong>Time Complexity:</strong> <code>O(n)</code></p>
+<ul>
+<li>Iterating through the list to count occurrences takes O(n) time, where n is the number of elements in the list.</li>
+</ul>
+<p><strong>Space Complexity:</strong> <code>O(n)</code></p>
+<ul>
+<li>The dictionary counter stores a count for each unique element in the list. In the worst case, if all elements are unique, the dictionary will have n entries.</li>
+</ul>
+<p><strong>Explanation</strong></p>
+<p>The first function find_duplicates uses a dictionary to track seen elements and identify duplicates in the list lst. As it iterates through the list, it checks if each element is already in the dictionary. If not, the element is added to the dictionary; if it is, the element is appended to the result list as a duplicate. The second function find_duplicates uses a set for the same purpose. It iterates through the list, checking if each element is in the set. If not, the element is added to the set; if it is, the element is appended to the result list as a duplicate</p>
+<p><strong>Does It Meet the Criteria?</strong></p>
+<p>The problem criteria often include constraints on time and space complexity. While this solution efficiently finds duplicates in linear time, it does not meet the space complexity requirement of O(1) extra space as specified by certain problem constraints (such as the LeetCode problem that requires O(n) time and O(1) extra space).</p>
+<ul>
+<li>
+<p>Time Complexity: O(n) - This is efficient and meets the criteria for linear time complexity.</p>
+</li>
+<li>
+<p>Space Complexity: O(n) - This does not meet the O(1) extra space requirement because it uses a dictionary to store counts.</p>
+</li>
+</ul>
+<h1 id="solution-2-1">Solution 2</h1>
+<p><strong>Ques: How does the second solution work using a list to mark things as seen?  What is it is time and space complexity and how do you know this?</strong></p>
+<p><strong>Code :</strong></p>
+<pre><code class="language-python">lst = [<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">find_duplicates</span>(<span class="hljs-params">lst</span>):
+    result = []
+    <span class="hljs-keyword">for</span> ele <span class="hljs-keyword">in</span> lst:
+        <span class="hljs-keyword">if</span> lst[<span class="hljs-built_in">abs</span>(ele) - <span class="hljs-number">1</span>] &lt; <span class="hljs-number">0</span>:
+            result.append(<span class="hljs-built_in">abs</span>(ele))
+        <span class="hljs-keyword">else</span>:        
+            lst[<span class="hljs-built_in">abs</span>(ele)-<span class="hljs-number">1</span>] *= -<span class="hljs-number">1</span>
+            <span class="hljs-built_in">print</span>(ele, lst)
+            
+    <span class="hljs-keyword">return</span> result
+find_duplicates(lst)
+</code></pre>
+<p><strong>Time Complexity:</strong> <code>O(n)</code></p>
+<ul>
+<li>The algorithm iterates through the list once, performing constant-time operations for each element. The loop runs n times.</li>
+</ul>
+<p><strong>Space Complexity:</strong> <code>O(1)</code></p>
+<ul>
+<li>The algorithm modifies the input list lst in place, which does not require additional space beyond the input list itself.</li>
+</ul>
+<p><strong>Explanation:</strong></p>
+<p>The second solution modifies the input list by marking elements seen, implemented by changing the sign of the value at their specific index. This in-place modification uses no extra space, only requiring the output list. The algorithm goes through the list, element by element, and uses the absolute value of each element to access a corresponding index. If the value of the new index is negative, it implies that the number has been encountered before and thus is repeated. Now, if the value at this index is positive, it is clear that the element has not been seen before; hence, we mark it as seen by changing the value at that index to the negative value of its current positive value.</p>
+<h2 id="visual-representation">Visual Representation</h2>
+<p><strong>Ques: how the list solution works by stepping through array one step at a time. You can also put your drawing or visual aids on paper and scan it or take a picture of it.</strong></p>
+<h1 id="list-solution-works-by-stepping-through-array-one-step-at-a-time">List solution works by stepping through array one step at a time.</h1>
+<p><img src="https://res.cloudinary.com/vaibhav-codexpress/image/upload/v1720127142/JPEG_image-476C-9AC2-31-0_wdm2dp.jpg" alt="Description">
+<img src="https://res.cloudinary.com/vaibhav-codexpress/image/upload/v1720127142/JPEG_image-46BA-8610-86-0_smoafb.jpg" alt="Description">
+<img src="https://res.cloudinary.com/vaibhav-codexpress/image/upload/v1720127141/JPEG_image-41A4-92C6-22-0_wobxqe.jpg" alt="Description"></p>
+
+            
+            
+        </body>
+        </html>
