@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Data Structures and Algorithms with Python - Video Assignment - 2</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="data-structures-and-algorithms-with-python---video-assignment---2">Data Structures and Algorithms with Python - Video Assignment - 2</h1>
+<p><strong>CDA 500</strong>
+<strong>Vaibhav Bansal - 50560484</strong></p>
+<h2 id="video-link-1-two-pointer-2sum-3sum">Video Link 1 (Two Pointer, 2SUM, 3SUM):</h2>
+<p><a href="https://buffalo.box.com/s/b8rmkytrbl91akxl7ujxnr2p4wdploa8">https://buffalo.box.com/s/b8rmkytrbl91akxl7ujxnr2p4wdploa8</a></p>
+<h2 id="video-link-2-water-container-problem">Video Link 2 (Water Container Problem):</h2>
+<p><a href="https://buffalo.box.com/s/xkp6329i65761a1s7ryz2a6x1ku91foe">https://buffalo.box.com/s/xkp6329i65761a1s7ryz2a6x1ku91foe</a></p>
+<h2 id="questions-video-1">Questions (Video 1)</h2>
+<p><strong>Ques 1 -- Explain the two-pointer pattern and illustrate how it works for checking if a string is a palindrome. Use examples like MADAM, ()(), and )()(. You must visually show the two pointers moving using PowerPoint, OneNote, or any other software. You can also use paper to draw the illustration and scan or take a picture of it.</strong></p>
+<p><strong>Solution 1</strong></p>
+<p>In this pattern, you initialize two pointers (indices) and iterate over an array until a certain condition is satisfied. Essentially, using two pointers allows you to keep track of two values simultaneously. Therefore, whenever you need to maintain information about two values, this pattern should be employed. The two pointers can be utilized to iterate in either one or two directions.</p>
+<p>Two pointers is an extremely common technique used to solve array and string problems. It involves having two integer variables that both move along an iterable. This means we will have two integers, usually named something like i and j, or left and right which each represent an index of the array or string.</p>
+<p><strong>Valid Palindrome</strong></p>
+<pre><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">valid_palindrome</span>(<span class="hljs-params">string</span>):
+    left_index = <span class="hljs-number">0</span>
+    right_index = <span class="hljs-built_in">len</span>(string)-<span class="hljs-number">1</span>
+      
+    <span class="hljs-keyword">while</span> left_index &lt; right_index:
+        <span class="hljs-keyword">if</span> string[left_index] != string[right_index]:
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span>
+        
+        left_index += <span class="hljs-number">1</span>
+        right_index -= <span class="hljs-number">1</span>
+        
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span>
+
+  
+valid_palindrome(<span class="hljs-string">&#x27;MADAM&#x27;</span>)
+</code></pre>
+<h2 id="visual-presentation">Visual Presentation</h2>
+<img src="https://res.cloudinary.com/vaibhav-codexpress/image/upload/v1720455565/JPEG_image-48E7-8964-21-0_newo0m.jpg" width="70%"/>
+<img src="https://res.cloudinary.com/vaibhav-codexpress/image/upload/v1720455565/JPEG_image-4EFD-8006-05-0_x798nj.jpg" width="70%" />
+<p><strong>Ques 2 -- discuss the 2sum problem and explain how the two-pointer solution works. First, visually solve the following example:</strong></p>
+<ul>
+<li>
+<p><strong>Input: nums = [2, 7, 11, 15], target = 9</strong></p>
+</li>
+<li>
+<p><strong>Output: [0, 1]</strong></p>
+</li>
+<li>
+<p><strong>Explanation: Because nums[0] + nums[1] equals 9, we return [0, 1]</strong></p>
+</li>
+</ul>
+<p><strong>Solution 2</strong></p>
+<pre><code class="language-python">    <span class="hljs-keyword">def</span> <span class="hljs-title function_">two_sum</span>(<span class="hljs-params">nums, target</span>):
+        left, right = <span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(nums) - <span class="hljs-number">1</span>
+        <span class="hljs-keyword">while</span> left &lt; right:
+            current_sum = nums[left] + nums[right]
+            <span class="hljs-keyword">if</span> current_sum == target:
+                <span class="hljs-keyword">return</span> [left, right]
+            <span class="hljs-keyword">elif</span> current_sum &lt; target:
+                left += <span class="hljs-number">1</span>
+            <span class="hljs-keyword">else</span>:
+                right -= <span class="hljs-number">1</span>
+        <span class="hljs-keyword">return</span> []
+
+    <span class="hljs-comment"># Example usage:</span>
+    nums = [<span class="hljs-number">2</span>, <span class="hljs-number">7</span>, <span class="hljs-number">11</span>, <span class="hljs-number">15</span>]
+    target = <span class="hljs-number">9</span>
+    <span class="hljs-built_in">print</span>(two_sum(nums, target))  <span class="hljs-comment"># Output: [0, 1]</span>
+</code></pre>
+<ul>
+<li>
+<p><strong>Time Complexity: O(n)</strong>
+Since the pointers move inward from the start and end of the list and converge towards each other, the loop runs at most n/2 iterations, where n is the length of the list. Therefore, the overall time complexity of the function is O(n).</p>
+</li>
+<li>
+<p><strong>Space Complexity: O(1)</strong>
+The function uses the input list nums, but since it doesn't modify or duplicate it, this is not considered extra space.The function uses a constant amount of extra space for the pointers left and right, as well as the temporary variable current_sum.</p>
+</li>
+</ul>
+<p><strong>Insight</strong></p>
+<p>The 2sum problem involves finding two numbers in a sorted array that add up to a specific target. The main trick or insight here is to use two pointers starting at the beginning and end of the array and move them based on the sum of the pointed values.</p>
+<h2 id="visual-presentation-1">Visual Presentation</h2>
+<img src ="https://res.cloudinary.com/vaibhav-codexpress/image/upload/v1720418111/JPEG_image-4925-92CE-2E-0_sbfv3g.jpg" width = "70%" />
+<p><strong>Ques 3 -- introduce the 3sum problem and explain how it differs from the 2sum problem. Also, discuss how the two-pointer solution can be utilized to solve the 3sum problem. Focus on comparing 2sum and 3sum, highlighting the differences and the adjustments needed to solve the 3sum problem. Include the code and a brief explanation in the HTML file</strong></p>
+<p><strong>Solution 3</strong></p>
+<pre><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">threeSum</span>(<span class="hljs-params">nums, target</span>):
+    nums.sort()
+    t=<span class="hljs-built_in">set</span>()
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(nums) - <span class="hljs-number">2</span>):
+        l,j=i+<span class="hljs-number">1</span>,<span class="hljs-built_in">len</span>(nums)-<span class="hljs-number">1</span>
+        <span class="hljs-keyword">while</span> l &lt; j:
+            total = nums[i] + nums[l] + nums[j]
+            <span class="hljs-keyword">if</span> total &gt; <span class="hljs-number">0</span>:
+                j-=<span class="hljs-number">1</span>
+            <span class="hljs-keyword">elif</span> total &lt; <span class="hljs-number">0</span>:
+                l+=<span class="hljs-number">1</span>
+            <span class="hljs-keyword">elif</span> total == <span class="hljs-number">0</span>:
+                t.add((nums[i],nums[l],nums[j]))
+                l += <span class="hljs-number">1</span>
+                j -= <span class="hljs-number">1</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">list</span>(t)
+
+nums = [-<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, -<span class="hljs-number">1</span>, -<span class="hljs-number">4</span>]
+target = <span class="hljs-number">0</span>
+<span class="hljs-built_in">print</span>(threeSum(nums, target))  <span class="hljs-comment"># Expected output: [(-1, -1, 2), (-1, 0, 1)]</span>
+</code></pre>
+<ul>
+<li>
+<p><strong>Time Complexity: O(N^2)</strong></p>
+</li>
+<li>
+<p><strong>Space Complexity: O(N) in the worst case, due to the storage of triplets in combinations.</strong></p>
+</li>
+</ul>
+<p><strong>Insight</strong></p>
+<p>The main trick is leveraging the sorted nature of the array to efficiently adjust the pointers to find valid triplets without redundant checks, thus reducing the problem complexity compared to a naive three-loop approach, which would lead to a N^3 solution.</p>
+<p>The 3sum problem is an extension of the 2sum problem where you need to find three numbers in an array that add up to zero. The main insight is to fix one number and then use the two-pointer technique to find the other two numbers.</p>
+<h4 id="comparison-with-2sum">Comparison with 2sum</h4>
+<ul>
+<li><strong>2sum:</strong> Find two numbers that sum to a target.</li>
+<li><strong>3sum:</strong> Find three numbers that sum to zero by fixing one number and using 2sum for the remaining array.</li>
+</ul>
+<h2 id="visual-presentation-2">Visual Presentation</h2>
+<img src="https://res.cloudinary.com/vaibhav-codexpress/image/upload/v1720418110/JPEG_image-4919-BFF3-D9-0_gecxml.jpg" width="70%"/>
+<img src="https://res.cloudinary.com/vaibhav-codexpress/image/upload/v1720418110/JPEG_image-4BC2-B838-3C-0_zvb8ny.jpg" width="70%"/>
+<h2 id="questions-video-2">Questions (Video 2)</h2>
+<p><strong>Ques 4 --  introduce the water container problem. Visually demonstrate how it works. Explain the logic used to determine the direction in which the pointer moves and how it differs from 2sum and 3sum. Provide reasons for these differences.</strong></p>
+<p><strong>Solution 4</strong></p>
+<p><strong>Brute Force</strong></p>
+<pre><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">maxArea</span>(<span class="hljs-params">height</span>):
+    max_area = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> left_index <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(height)):
+        <span class="hljs-keyword">for</span> right_index <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(left_index + <span class="hljs-number">1</span>, <span class="hljs-built_in">len</span>(height)):
+            width = right_index - left_index
+            low_height = <span class="hljs-built_in">min</span>(height[left_index], height[right_index])
+
+            area = width * low_height
+
+            <span class="hljs-keyword">if</span> area &gt; max_area:
+                max_area = area
+    <span class="hljs-keyword">return</span> max_area
+
+height = [<span class="hljs-number">1</span>,<span class="hljs-number">8</span>,<span class="hljs-number">6</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">8</span>,<span class="hljs-number">3</span>,<span class="hljs-number">7</span>]
+maxArea(height)
+</code></pre>
+<ul>
+<li>
+<p><strong>Time complexity: O(N^2)</strong></p>
+</li>
+<li>
+<p><strong>Space complexity: O(1)</strong></p>
+</li>
+</ul>
+<p><strong>Optimized Code</strong></p>
+<pre><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">maxArea</span>(<span class="hljs-params">height</span>):
+    height = [<span class="hljs-number">1</span>,<span class="hljs-number">8</span>,<span class="hljs-number">6</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">8</span>,<span class="hljs-number">3</span>,<span class="hljs-number">7</span>]
+    max_area = <span class="hljs-number">0</span>
+
+    left_index = <span class="hljs-number">0</span>
+    right_index = <span class="hljs-built_in">len</span>(height)-<span class="hljs-number">1</span>
+
+    <span class="hljs-keyword">while</span> left_index &lt; right_index:
+        width = right_index - left_index
+        low_height = <span class="hljs-built_in">min</span>(height[left_index], height[right_index])
+        area = width * low_height
+        <span class="hljs-keyword">if</span> area &gt; max_area:
+            max_area = area
+        <span class="hljs-keyword">if</span> height[left_index] &lt;= height[right_index]:
+            left_index += <span class="hljs-number">1</span>
+        <span class="hljs-keyword">else</span>:
+            right_index -= <span class="hljs-number">1</span>
+    <span class="hljs-keyword">return</span> max_area
+
+height = [<span class="hljs-number">1</span>,<span class="hljs-number">8</span>,<span class="hljs-number">6</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">8</span>,<span class="hljs-number">3</span>,<span class="hljs-number">7</span>]
+maxArea(height)
+</code></pre>
+<ul>
+<li>
+<p><strong>Time complexity: O(N)</strong></p>
+</li>
+<li>
+<p><strong>Space complexity: O(1)</strong></p>
+</li>
+</ul>
+<p><strong>Insight</strong></p>
+<p>The key insight of the two-pointer technique is to maximize the area by starting with the widest possible container and then narrowing the width while trying to increase the height. We always move the pointer that points to the shorter height because the area is determined by the shorter of the two heights. By moving the pointer at the shorter height, we have a chance of finding a taller height that might increase the area.</p>
+<h2 id="visual-presentation-3">Visual Presentation</h2>
+<img src="https://res.cloudinary.com/vaibhav-codexpress/image/upload/v1720418110/JPEG_image-49C5-9B20-1C-0_e4wtnd.jpg" width="60%"/>
+<img src="https://res.cloudinary.com/vaibhav-codexpress/image/upload/v1720418110/JPEG_image-4088-8528-4B-0_nbkj3l.jpg" width="60%"/>
+<img src="https://res.cloudinary.com/vaibhav-codexpress/image/upload/v1720418110/JPEG_image-497B-A637-16-0_tocsq6.jpg" width="60%"/>
+<img src="https://res.cloudinary.com/vaibhav-codexpress/image/upload/v1720418112/JPEG_image-49BB-9796-94-0_qlzmtf.jpg" width="60%"/>
+<img src="https://res.cloudinary.com/vaibhav-codexpress/image/upload/v1720418109/JPEG_image-4459-8F27-42-0_mhtps5.jpg" width="60%"/>
+<p><strong>Explain the logic used to determine the direction in which the pointer moves and how it differs from 2sum and 3sum</strong></p>
+<p><strong>Explanation :</strong></p>
+<p><strong>Differences from 2sum and 3sum</strong>
+2sum and 3sum: Focus on finding specific elements that sum to a target value. Pointers move based on the sum of the values at the pointers.
+Water Container: Focus on finding the maximum area. Pointers move based on the height of the lines to maximize the potential area.</p>
+<p>The key difference is in the criteria for moving the pointers. In 2sum and 3sum, the pointers move based on the comparison between the sum of the elements and the target value. In the Water Container problem, the pointers move based on the comparison between the heights of the lines.</p>
+
+            
+            
+        </body>
+        </html>
