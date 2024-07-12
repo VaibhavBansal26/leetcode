@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Data Structures and Algorithms with Python - Video Assignment - 4</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="data-structures-and-algorithms-with-python---video-assignment---4">Data Structures and Algorithms with Python - Video Assignment - 4</h1>
+<p><strong>CDA 500</strong>
+<strong>Vaibhav Bansal - 50560484</strong></p>
+<h2 id="video-link-1-path-sum-">Video Link 1 (PATH SUM ||):</h2>
+<p><a href="https://buffalo.box.com/s/gy1cg9pr7r759quado8jjybftosu5zlp">https://buffalo.box.com/s/gy1cg9pr7r759quado8jjybftosu5zlp</a></p>
+<h2 id="path-sum-">PATH SUM ||</h2>
+<p><strong>Leetcode Question Link:</strong></p>
+<p><a href="https://leetcode.com/problems/path-sum-ii/">https://leetcode.com/problems/path-sum-ii/</a></p>
+<h2 id="code">Code</h2>
+<pre><code class="language-python">
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">TreeNode</span>():
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self,val = <span class="hljs-number">0</span>,left = <span class="hljs-literal">None</span>, right = <span class="hljs-literal">None</span></span>):
+        self.val = val
+        self.left = left
+        self.right = right
+        
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">BinaryTree</span>:
+
+    <span class="hljs-comment"># Create Binary Tree</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">create_binary_tree</span>(<span class="hljs-params">lst,i,n</span>):
+        <span class="hljs-keyword">if</span> i &lt; n:
+            <span class="hljs-keyword">if</span> lst[i] <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+            <span class="hljs-keyword">else</span>:
+                root = TreeNode(lst[i])
+                root.left = BinaryTree.create_binary_tree(lst, <span class="hljs-number">2</span> * i + <span class="hljs-number">1</span>, n)
+                root.right = BinaryTree.create_binary_tree(lst, <span class="hljs-number">2</span> * i + <span class="hljs-number">2</span>, n)
+                <span class="hljs-keyword">return</span> root
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+
+    <span class="hljs-comment"># Path Sum Helper Function</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">pathSumUtils</span>(<span class="hljs-params">root,target,current_path,matching_path</span>):
+        <span class="hljs-keyword">if</span> root <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+            <span class="hljs-keyword">return</span>
+        current_path.append(root.val)
+        <span class="hljs-keyword">if</span> root.val == target <span class="hljs-keyword">and</span> root.left <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span> <span class="hljs-keyword">and</span> root.right <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+            matching_path.append(<span class="hljs-built_in">list</span>(current_path))
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">if</span> root.left:
+                BinaryTree.pathSumUtils(root.left,target-root.val,current_path,matching_path)
+            <span class="hljs-keyword">if</span> root.right:
+                BinaryTree.pathSumUtils(root.right,target-root.val,current_path,matching_path)
+        current_path.pop() <span class="hljs-comment">#Backtracking</span>
+
+    <span class="hljs-comment">#Path Sum Function        </span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">pathSums</span>(<span class="hljs-params">root,target</span>):
+        matching_path = []
+        BinaryTree.pathSumUtils(root,target,[],matching_path)
+        <span class="hljs-keyword">return</span> matching_path
+
+<span class="hljs-comment"># Binary Tree    </span>
+lst=[<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">8</span>,<span class="hljs-number">11</span>,<span class="hljs-literal">None</span>,<span class="hljs-number">13</span>,<span class="hljs-number">4</span>,<span class="hljs-number">7</span>,<span class="hljs-number">2</span>,<span class="hljs-literal">None</span>,<span class="hljs-literal">None</span>,<span class="hljs-literal">None</span>,<span class="hljs-literal">None</span>,<span class="hljs-number">5</span>,<span class="hljs-number">1</span>] 
+
+tree_root = BinaryTree.create_binary_tree(lst,<span class="hljs-number">0</span>,<span class="hljs-built_in">len</span>(lst))
+
+total_paths = BinaryTree.pathSums(tree_root,<span class="hljs-number">22</span>)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Total paths&quot;</span>,total_paths)
+<span class="hljs-comment"># Total paths [[5, 4, 11, 2], [5, 8, 4, 5]]</span>
+
+</code></pre>
+<hr/>
+<ul>
+<li>
+<p><strong>Time Complexity :</strong> <code>O(n)</code></p>
+</li>
+<li>
+<p><strong>Space Complexity :</strong> <code>O(n)</code></p>
+</li>
+</ul>
+<hr/>
+<h2 id="questions">Questions</h2>
+<p><strong>Ques1 - Explain how each recursion has global information</strong></p>
+<p><strong>Solution 1</strong>
+The recursion has access to global information meant that each recursive call has access to the current_path and matching_path. The <code>current_path</code> tracks the current path and is updated as the algorithm traverses the tree whereas
+<code>matching_path</code> collects all valid paths and is shared across recursive calls.</p>
+<p><strong>Ques2 - Explain why DFS instead of BFS</strong></p>
+<p><strong>Solution 2</strong></p>
+<p>DFS easily supports backtracking. After reaching the end of a path, it can backtrack to the previous state and explore alternative paths FOR explorING all root-to-leaf paths that sum to a given target value. BFS does not inherently support backtracking in the same way. It processes nodes level by level, so backtracking to explore alternative paths is not as straightforward.</p>
+<p><strong>Ques3 - Explain what backtrace is and why you need it</strong></p>
+<p><strong>Solution 3</strong></p>
+<p>After exploring a path, current_path.pop() pops off the last node from current_path to backtrack it to the previous state. This allows the function to proceed with other alternative paths from the same parent node so that all possible paths are explored.</p>
+
+            
+            
+        </body>
+        </html>
