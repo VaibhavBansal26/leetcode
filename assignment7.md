@@ -4,7 +4,7 @@
 **Vaibhav Bansal - 50560484**
 
 ## Video Link 1 (PATH SUM ||):
-https://buffalo.box.com/s/gy1cg9pr7r759quado8jjybftosu5zlp
+https://buffalo.box.com/s/dmh4h46tn6qyraufpn6ii8gkgmulhxjp
 
 ## PATH SUM ||
 
