@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Data Structures and Algorithms with Python - Video Assignment - 5</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="data-structures-and-algorithms-with-python---video-assignment---5">Data Structures and Algorithms with Python - Video Assignment - 5</h1>
+<p><strong>CDA 500</strong>
+<strong>Vaibhav Bansal - 50560484</strong></p>
+<h2 id="video-link-1-find-largest-value-in-each-tree-row---">Video Link 1 (Find Largest Value in Each Tree Row): --&gt;</h2>
+<p><a href="https://buffalo.box.com/s/9ozl37o0bryq1w3ikayi7vv62nkx93yo">https://buffalo.box.com/s/9ozl37o0bryq1w3ikayi7vv62nkx93yo</a></p>
+<h2 id="find-largest-value-in-each-tree-row">Find Largest Value in Each Tree Row</h2>
+<p><strong>Leetcode Question Link:</strong></p>
+<p><a href="https://leetcode.com/problems/find-largest-value-in-each-tree-row/">https://leetcode.com/problems/find-largest-value-in-each-tree-row/</a></p>
+<h2 id="code">Code</h2>
+<h2 id="iterative-method">Iterative method</h2>
+<pre><code class="language-python">
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">largestValues</span>(<span class="hljs-params">self, root: <span class="hljs-type">Optional</span>[TreeNode]</span>) -&gt; <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]:
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> root:
+            <span class="hljs-keyword">return</span>
+        results = []
+        q = []
+        q.append(root)
+        <span class="hljs-keyword">while</span> q:
+            currentLength = <span class="hljs-built_in">len</span>(q)
+            currentLevelMax = <span class="hljs-built_in">float</span>(-inf)
+            <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(currentLength):
+                n = q.pop(<span class="hljs-number">0</span>)
+                currentLevelMax = <span class="hljs-built_in">max</span>(currentLevelMax, n.val)
+                <span class="hljs-keyword">if</span> n.left:
+                    q.append(n.left)
+                <span class="hljs-keyword">if</span> n.right:
+                    q.append(n.right)
+            results.append(currentLevelMax)
+        <span class="hljs-keyword">return</span> results
+
+Input: root = [<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">3</span>,null,<span class="hljs-number">9</span>]
+Output: [<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">9</span>]
+</code></pre>
+<hr/>
+<ul>
+<li>
+<p><strong>Time Complexity :</strong> <code>O(N)</code></p>
+</li>
+<li>
+<p><strong>Space Complexity :</strong> <code>O(N)</code></p>
+</li>
+</ul>
+<hr/>
+<h2 id="recursion">Recursion</h2>
+<pre><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">largestValues</span>(<span class="hljs-params">self, root: <span class="hljs-type">Optional</span>[TreeNode]</span>) -&gt; <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]:
+        levels = []
+        <span class="hljs-keyword">def</span> <span class="hljs-title function_">helper</span>(<span class="hljs-params">root,level</span>):
+            <span class="hljs-keyword">if</span> root <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+                <span class="hljs-keyword">return</span> levels
+                
+            <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(levels) == level:
+                levels.append([])
+
+            levels[level].append(root.val)
+
+            <span class="hljs-keyword">if</span> root.left:
+                helper(root.left,level+<span class="hljs-number">1</span>)
+            <span class="hljs-keyword">if</span> root.right:
+                helper(root.right,level+<span class="hljs-number">1</span>)
+            
+        helper(root,<span class="hljs-number">0</span>)
+        <span class="hljs-keyword">return</span> [<span class="hljs-built_in">max</span>(i) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> levels]
+
+Input: root = [<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">3</span>,null,<span class="hljs-number">9</span>]
+Output: [<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">9</span>]
+
+</code></pre>
+<hr/>
+<ul>
+<li>
+<p><strong>Time Complexity :</strong> <code>O(N)</code></p>
+</li>
+<li>
+<p><strong>Space Complexity :</strong> <code>O(H)</code></p>
+</li>
+</ul>
+<hr/>
+<h2 id="questions">Questions</h2>
+<p><strong>Ques1 - Explain why you need a queue and how it is used</strong></p>
+<p><strong>Solution 1 :</strong>
+Queue data structure is needed to store and track nodes level by level. Queue follows First In First Out (FIFO) approach which naturally aligns with the level order traversal approach.</p>
+<p><strong>Ques2 - Explain why BFS instead of DFS</strong></p>
+<p><strong>Solution 2 :</strong>
+As the question has asked about the maxinmum value at each level, In that case, BFS is more suitable than DFS as BFS tranverse nodes level by level whereas DFS dives deep into the tree before backtracking, which is not naturally aligned to track the max values at each level.</p>
+<p><strong>Ques3 - How is the max found for each level?</strong></p>
+<p><strong>Solution 3 :</strong>
+At each level of BFS, we can iterate over all the nodes at that particular level to find the maximum value at that particular level.</p>
+
+            
+            
+        </body>
+        </html>
