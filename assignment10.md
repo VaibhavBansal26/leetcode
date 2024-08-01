@@ -3,9 +3,9 @@
 **CDA 500**
 **Vaibhav Bansal - 50560484**
 
-<!-- ## Video Link 1 (Sliding Window Median):
+## Video Link 1 (Top K Numbers):
 
-https://buffalo.box.com/s/1f87a2pjqpok4w04124iax897z1hix34 -->
+https://buffalo.box.com/s/2ogfyksgpyecwddqn6v42aegbn4elt3l
 
 ## Top K Numbers
 
@@ -51,17 +51,16 @@ top_k_numbers(nums, 4)
 
 **Ques1 - Explain why you load up k elements into a heap, which heap, min or max?**
 
-**Solution 1 :**
+**Solution 1 :** Loading the first k elements into the heap initializes it with a fixed number of elements. This is crucial because it sets up a baseline from which we can start comparing the rest of the elements in the array.  We use a min-heap in this algorithm. The min-heap allows us to efficiently track the smallest element among the top k elements. This is important because the root of the min-heap (the smallest element) is the element that we need to potentially replace when we find a new, larger element.
 
 
 **Ques2 - How do you update the heap for k-N elements and why do you do that?**
 
 **Solution 2 :**
-Python's heapq module implements a min-heap, meaning the smallest element is always at the root. To simulate a max-heap using Python's min-heap, we store negative values. When inserting a number into the max-heap, we push its negative value. When retrieving the maximum value, we pop the smallest negative value
+Iterate Over Remaining Elements and remove the root element from min-heap using `heapq.heappop(min_heap)` and insert the new element in min-heap after comparison using `heapq.heappush(min_heap, number)`. We do this to maintain Top K Elements by ensuring that the heap always contains the largest k elements, we can efficiently find the top k elements in the array.
 
 
 **Ques3 - Essentially, how does a heap help yo solve this problem?**
 
-**Solution 3 :**
-Balancing the heaps ensures that the size difference between the two heaps is at most one. This is crucial for efficiently finding the median.
+**Solution 3 :** A heap (specifically a min-heap) automatically keeps the smallest element at the root, which is ideal for this problem. It allows us to quickly access and replace the smallest element among the top k elements.
 

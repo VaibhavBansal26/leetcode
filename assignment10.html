@@ -141,9 +141,8 @@
             <h1 id="data-structures-and-algorithms-with-python---video-assignment---7">Data Structures and Algorithms with Python - Video Assignment - 7</h1>
 <p><strong>CDA 500</strong>
 <strong>Vaibhav Bansal - 50560484</strong></p>
-<!-- ## Video Link 1 (Sliding Window Median):
-
-https://buffalo.box.com/s/1f87a2pjqpok4w04124iax897z1hix34 -->
+<h2 id="video-link-1-top-k-numbers">Video Link 1 (Top K Numbers):</h2>
+<p><a href="https://buffalo.box.com/s/2ogfyksgpyecwddqn6v42aegbn4elt3l">https://buffalo.box.com/s/2ogfyksgpyecwddqn6v42aegbn4elt3l</a></p>
 <h2 id="top-k-numbers">Top K Numbers</h2>
 <p><strong>Leetcode Question Link:</strong></p>
 <p><a href="https://leetcode.com/problems/kth-largest-element-in-an-array/">https://leetcode.com/problems/kth-largest-element-in-an-array/</a></p>
@@ -181,13 +180,12 @@ top_k_numbers(nums, <span class="hljs-number">4</span>)
 <hr/>
 <h2 id="questions">Questions</h2>
 <p><strong>Ques1 - Explain why you load up k elements into a heap, which heap, min or max?</strong></p>
-<p><strong>Solution 1 :</strong></p>
+<p><strong>Solution 1 :</strong> Loading the first k elements into the heap initializes it with a fixed number of elements. This is crucial because it sets up a baseline from which we can start comparing the rest of the elements in the array.  We use a min-heap in this algorithm. The min-heap allows us to efficiently track the smallest element among the top k elements. This is important because the root of the min-heap (the smallest element) is the element that we need to potentially replace when we find a new, larger element.</p>
 <p><strong>Ques2 - How do you update the heap for k-N elements and why do you do that?</strong></p>
 <p><strong>Solution 2 :</strong>
-Python's heapq module implements a min-heap, meaning the smallest element is always at the root. To simulate a max-heap using Python's min-heap, we store negative values. When inserting a number into the max-heap, we push its negative value. When retrieving the maximum value, we pop the smallest negative value</p>
+Iterate Over Remaining Elements and remove the root element from min-heap using <code>heapq.heappop(min_heap)</code> and insert the new element in min-heap after comparison using <code>heapq.heappush(min_heap, number)</code>. We do this to maintain Top K Elements by ensuring that the heap always contains the largest k elements, we can efficiently find the top k elements in the array.</p>
 <p><strong>Ques3 - Essentially, how does a heap help yo solve this problem?</strong></p>
-<p><strong>Solution 3 :</strong>
-Balancing the heaps ensures that the size difference between the two heaps is at most one. This is crucial for efficiently finding the median.</p>
+<p><strong>Solution 3 :</strong> A heap (specifically a min-heap) automatically keeps the smallest element at the root, which is ideal for this problem. It allows us to quickly access and replace the smallest element among the top k elements.</p>
 
             
             
